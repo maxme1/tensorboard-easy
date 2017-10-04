@@ -4,7 +4,7 @@ from time import sleep
 
 import numpy as np
 
-from tensorboard_logger import Logger
+from tensorboard_easy import Logger
 
 
 class TestLogger(unittest.TestCase):
