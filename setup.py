@@ -1,20 +1,22 @@
 from distutils.core import setup
 from setuptools import find_packages
 
-classifiers = '''Development Status :: 4 - Beta
+classifiers = '''Development Status :: 5 - Production/Stable
+Programming Language :: Python :: 3.4
+Programming Language :: Python :: 3.5
 Programming Language :: Python :: 3.6'''
 
 setup(
     name='tensorboard-easy',
     packages=find_packages(),
     include_package_data=True,
-    version='0.1.11',
+    version='0.1.12',
     description='A tensorflow-independent tensorboard logger',
     author='maxme1',
     author_email='maxs987@gmail.com',
     license='MIT',
     url='https://github.com/maxme1/tensorboard-easy',
-    download_url='https://github.com/maxme1/tensorboard-easy/archive/0.1.11.tar.gz',
+    download_url='https://github.com/maxme1/tensorboard-easy/archive/0.1.12.tar.gz',
     keywords=[
         'tensorboard', 'logging',
     ],

@@ -1,13 +1,19 @@
 import os
+import socket
 import struct
 from time import time
 from io import BytesIO
-from typing import Union
+from typing import Union, Iterable
 
+import functools
 from PIL import Image
 import numpy as np
 
-from .proto.event_pb2 import Event, Summary, HistogramProto
+from .proto.event_pb2 import Event
+from .proto.summary_pb2 import Summary, HistogramProto, SummaryMetadata
+from .proto.tensor_pb2 import TensorProto
+from .proto.tensor_shape_pb2 import TensorShapeProto
+from .proto import types_pb2 as tensor_type
 from .utils import *
 
 COLOR_SPACES = {
@@ -20,8 +26,8 @@ COLOR_SPACES = {
 class Logger:
     def __init__(self, path):
         os.makedirs(path, exist_ok=True)
-        # TODO: get machine real name instead of localhost
-        self.filename = os.path.join(path, f'events.out.tfevents.{time()}.localhost')
+        self.filename = os.path.join(path, 'events.out.tfevents.%f.%s' %
+                                     (time(), socket.gethostname()))
         self.file = None
 
     def __enter__(self):
@@ -66,11 +72,19 @@ class Logger:
         """
         return self._make_log(tag, first_step, self.log_scalar)
 
-    def make_log_image(self, tag: str, first_step: int = 0) -> callable(Union[int, float]):
-        """
-        Analog to `make_log_scalar`
-        """
+    def make_log_image(self, tag: str, first_step: int = 0) -> callable(np.array):
+        """Analog to `make_log_scalar`"""
         return self._make_log(tag, first_step, self.log_image)
+
+    def make_log_text(self, tag: str, first_step: int = 0) -> callable(Union[str, Iterable]):
+        """Analog to `make_log_scalar`"""
+        return self._make_log(tag, first_step, self.log_text)
+
+    def make_log_histogram(self, tag: str, first_step: int = 0, num_bars: int = 30) \
+            -> callable(np.array):
+        """Analog to `make_log_scalar`"""
+        method = functools.partial(self.log_histogram, num_bars=num_bars)
+        return self._make_log(tag, first_step, method)
 
     def log_scalar(self, tag: str, value: Union[int, float], step: int):
         """
@@ -110,8 +124,8 @@ class Logger:
         try:
             image = Image.fromarray(image, COLOR_SPACES[mode])
         except KeyError:
-            raise TypeError(f'Cannot convert tensor of shape {image.shape} '
-                            f'to image') from None
+            raise TypeError('Cannot convert tensor of shape %s '
+                            'to image' % image.shape) from None
 
         # convert to bytes
         with BytesIO() as output:
@@ -135,11 +149,11 @@ class Logger:
         num_bars: int
             The number of bars if the resulting histogram.
         """
-        data = data.flatten()
+        data = data.ravel()
         min_ = data.min()
         max_ = data.max()
         sum_ = data.sum()
-        sum_sq = data @ data
+        sum_sq = data.dot(data)
         if min_ == max_:
             num = 1
             bucket_limit = [min_]
@@ -152,3 +166,26 @@ class Logger:
         hist = HistogramProto(min=min_, max=max_, sum=sum_, sum_squares=sum_sq, num=num,
                               bucket_limit=bucket_limit, bucket=bucket)
         self._write_event(tag, step, histo=hist)
+
+    def log_text(self, tag: str, tensor: Union[str, Iterable], step: int):
+        """
+        Adds a tensor with text to log.
+
+        Parameters
+        ----------
+        tag: str
+        tensor: str, iterable
+            String, or iterable of type str and dimensionality <= 2
+        step: int
+        """
+        tensor = np.asarray(tensor, dtype=bytes)
+
+        shape = TensorShapeProto()
+        for i in tensor.shape:
+            shape.dim.add(size=i)
+        tensor_ = TensorProto(dtype=tensor_type.DT_STRING, tensor_shape=shape,
+                              string_val=tensor.ravel(), version_number=1)
+        # TODO: no need to save metadata on each step
+        metadata = SummaryMetadata()
+        metadata.plugin_data.add(plugin_name='text', content='{}')
+        self._write_event(tag, step, tensor=tensor_, metadata=metadata)

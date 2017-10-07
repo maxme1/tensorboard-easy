@@ -51,3 +51,12 @@ class TestLogger(unittest.TestCase):
                                                 np.random.normal(100, i + 1, 500))), i)
         except BaseException:
             self.fail()
+
+    def test_text(self):
+        try:
+            with Logger('log_path') as log:
+                log.log_text('string', 'Test string', 0)
+                log.log_text('list', ['A', 'B'], 0)
+                log.log_text('2D', [['Some', 'multidimensional'], ['string', 'tensor']], 0)
+        except BaseException:
+            self.fail()

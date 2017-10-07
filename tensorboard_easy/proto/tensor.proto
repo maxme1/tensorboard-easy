@@ -1,0 +1,39 @@
+syntax = "proto3";
+
+package tensorflow;
+option cc_enable_arenas = true;
+
+import "proto/tensor_shape.proto";
+import "proto/types.proto";
+
+// Protocol buffer representing a tensor.
+message TensorProto {
+  DataType dtype = 1;
+  TensorShapeProto tensor_shape = 2;
+
+  //  for now version_number == 1
+  int32 version_number = 3;
+
+  //  serialized content. not used
+  //  bytes tensor_content = 4;
+
+  repeated int32 half_val = 13 [packed = true];
+  // DT_FLOAT.
+  repeated float float_val = 5 [packed = true];
+  // DT_DOUBLE.
+  repeated double double_val = 6 [packed = true];
+  // DT_INT32, DT_INT16, DT_INT8, DT_UINT8.
+  repeated int32 int_val = 7 [packed = true];
+  // DT_STRING
+  repeated bytes string_val = 8;
+  // DT_COMPLEX64. scomplex_val(2*i) and scomplex_val(2*i+1) are real
+  // and imaginary parts of i-th single precision complex.
+  repeated float scomplex_val = 9 [packed = true];
+  // DT_INT64
+  repeated int64 int64_val = 10 [packed = true];
+  // DT_BOOL
+  repeated bool bool_val = 11 [packed = true];
+  // DT_COMPLEX128. dcomplex_val(2*i) and dcomplex_val(2*i+1) are real
+  // and imaginary parts of i-th double precision complex.
+  repeated double dcomplex_val = 12 [packed = true];
+};

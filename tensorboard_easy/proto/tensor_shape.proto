@@ -1,0 +1,17 @@
+syntax = "proto3";
+option cc_enable_arenas = true;
+
+package tensorflow;
+
+// Dimensions of a tensor.
+message TensorShapeProto {
+  message Dim {
+    int64 size = 1;
+    // Optional name of the tensor dimension.
+    string name = 2;
+  };
+
+  repeated Dim dim = 2;
+  //  not used
+  //  bool unknown_rank = 3;
+};
