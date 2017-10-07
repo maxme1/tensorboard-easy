@@ -2,13 +2,8 @@ syntax = "proto3";
 
 package tensorflow;
 option cc_enable_arenas = true;
-//option java_outer_classname = "EventProtos";
-//option java_multiple_files = true;
-//option java_package = "org.tensorflow.util";
 
 
-// Protocol buffer representing an event that happened during
-// the execution of a Brain model.
 message Event {
   // Timestamp of the event.
   double wall_time = 1;

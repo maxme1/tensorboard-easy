@@ -39,3 +39,15 @@ class TestLogger(unittest.TestCase):
                     sleep(.1)
         except BaseException:
             self.fail()
+
+    def test_histogram(self):
+        try:
+            with Logger('log_path') as log:
+                for i in range(40):
+                    log.log_histogram('normal', np.random.normal(0, i + 1, 500), i)
+                    log.log_histogram('chi', np.random.chisquare(6, 500), i)
+                    log.log_histogram('normal/multimodal',
+                                      np.stack((np.random.normal(0, i + 1, 500),
+                                                np.random.normal(100, i + 1, 500))), i)
+        except BaseException:
+            self.fail()

@@ -7,7 +7,7 @@ from typing import Union
 from PIL import Image
 import numpy as np
 
-from .proto.event_pb2 import Event, Summary
+from .proto.event_pb2 import Event, Summary, HistogramProto
 from .utils import *
 
 COLOR_SPACES = {
@@ -32,7 +32,9 @@ class Logger:
         self.file.close()
         self.file = None
 
-    def _write_event(self, summary, step):
+    def _write_event(self, tag, step, **kwargs):
+        summary = Summary()
+        summary.value.add(tag=tag, **kwargs)
         event = Event(wall_time=time(), summary=summary, step=step)
         event = event.SerializeToString()
         header = struct.pack('Q', len(event))
@@ -81,10 +83,7 @@ class Logger:
         step: int
         """
         value = float(value)
-
-        summary = Summary()
-        summary.value.add(tag=tag, simple_value=value)
-        self._write_event(summary, step)
+        self._write_event(tag, step, simple_value=value)
 
     def log_image(self, tag: str, image: np.array, step: int):
         """
@@ -94,7 +93,7 @@ class Logger:
         ----------
         tag: str
         image: np.array
-            Image to save of shape 3xMxN (RGB), 4xMxN (RGBA), MxN or 1xMxN (grayScale)
+            Image of shape 3xMxN (RGB), 4xMxN (RGBA), MxN or 1xMxN (grayScale)
         step: int
         """
         assert image.ndim in [2, 3]
@@ -121,6 +120,35 @@ class Logger:
 
         img = Summary.Image(height=image.height, width=image.width, colorspace=mode,
                             encoded_image_string=image_string)
-        summary = Summary()
-        summary.value.add(tag=tag, image=img)
-        self._write_event(summary, step)
+        self._write_event(tag, step, image=img)
+
+    def log_histogram(self, tag: str, data: np.array, step: int, num_bars: int = 30):
+        """
+        Adds a histogram to log.
+
+        Parameters
+        ----------
+        tag: str
+        data: np.array
+            Array of any shape.
+        step: int
+        num_bars: int
+            The number of bars if the resulting histogram.
+        """
+        data = data.flatten()
+        min_ = data.min()
+        max_ = data.max()
+        sum_ = data.sum()
+        sum_sq = data @ data
+        if min_ == max_:
+            num = 1
+            bucket_limit = [min_]
+            bucket = [len(data)]
+        else:
+            bucket, bucket_limit = np.histogram(data, num_bars)
+            num = len(bucket_limit)
+            bucket_limit = bucket_limit[1:]
+
+        hist = HistogramProto(min=min_, max=max_, sum=sum_, sum_squares=sum_sq, num=num,
+                              bucket_limit=bucket_limit, bucket=bucket)
+        self._write_event(tag, step, histo=hist)
