@@ -6,17 +6,21 @@ Programming Language :: Python :: 3.4
 Programming Language :: Python :: 3.5
 Programming Language :: Python :: 3.6'''
 
+with open('README.rst') as file:
+    long_description = file.read()
+
 setup(
     name='tensorboard-easy',
     packages=find_packages(),
     include_package_data=True,
-    version='0.1.12',
+    version='0.1.16',
     description='A tensorflow-independent tensorboard logger',
+    long_description=long_description,
     author='maxme1',
     author_email='maxs987@gmail.com',
     license='MIT',
     url='https://github.com/maxme1/tensorboard-easy',
-    download_url='https://github.com/maxme1/tensorboard-easy/archive/0.1.12.tar.gz',
+    download_url='https://github.com/maxme1/tensorboard-easy/archive/0.1.16.tar.gz',
     keywords=[
         'tensorboard', 'logging',
     ],
