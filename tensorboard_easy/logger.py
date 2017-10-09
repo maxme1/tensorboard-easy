@@ -28,15 +28,13 @@ class Logger:
         os.makedirs(path, exist_ok=True)
         self.filename = os.path.join(path, 'events.out.tfevents.%f.%s' %
                                      (time(), socket.gethostname()))
-        self.file = None
+        self.file = open(self.filename, 'wb')
 
     def __enter__(self):
-        self.file = open(self.filename, 'wb')
         return self
 
     def __exit__(self, exc_type, exc_val, exc_tb):
-        self.file.close()
-        self.file = None
+        self.close()
 
     def _write_event(self, tag, step, **kwargs):
         summary = Summary()
@@ -60,6 +58,10 @@ class Logger:
             return method(tag, value, step)
 
         return wrapper
+
+    def close(self):
+        self.file.close()
+        self.file = None
 
     def make_log_scalar(self, tag: str, first_step: int = 0) -> callable(Union[int, float]):
         """
