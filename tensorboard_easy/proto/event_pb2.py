@@ -18,9 +18,9 @@ from . import summary_pb2 as proto_dot_summary__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/event.proto',
-  package='tensorflow',
+  package='tensorboard_easy',
   syntax='proto3',
-  serialized_pb=_b('\n\x11proto/event.proto\x12\ntensorflow\x1a\x13proto/summary.proto\"\xbb\x02\n\x05\x45vent\x12\x11\n\twall_time\x18\x01 \x01(\x01\x12\x0c\n\x04step\x18\x02 \x01(\x03\x12\x16\n\x0c\x66ile_version\x18\x03 \x01(\tH\x00\x12\x13\n\tgraph_def\x18\x04 \x01(\x0cH\x00\x12&\n\x07summary\x18\x05 \x01(\x0b\x32\x13.tensorflow.SummaryH\x00\x12-\n\x0blog_message\x18\x06 \x01(\x0b\x32\x16.tensorflow.LogMessageH\x00\x12-\n\x0bsession_log\x18\x07 \x01(\x0b\x32\x16.tensorflow.SessionLogH\x00\x12<\n\x13tagged_run_metadata\x18\x08 \x01(\x0b\x32\x1d.tensorflow.TaggedRunMetadataH\x00\x12\x18\n\x0emeta_graph_def\x18\t \x01(\x0cH\x00\x42\x06\n\x04what\"\x99\x01\n\nLogMessage\x12+\n\x05level\x18\x01 \x01(\x0e\x32\x1c.tensorflow.LogMessage.Level\x12\x0f\n\x07message\x18\x02 \x01(\t\"M\n\x05Level\x12\x0b\n\x07UNKNOWN\x10\x00\x12\r\n\tDEBUGGING\x10\n\x12\x08\n\x04INFO\x10\x14\x12\x08\n\x04WARN\x10\x1e\x12\t\n\x05\x45RROR\x10(\x12\t\n\x05\x46\x41TAL\x10\x32\"\xb6\x01\n\nSessionLog\x12\x34\n\x06status\x18\x01 \x01(\x0e\x32$.tensorflow.SessionLog.SessionStatus\x12\x17\n\x0f\x63heckpoint_path\x18\x02 \x01(\t\x12\x0b\n\x03msg\x18\x03 \x01(\t\"L\n\rSessionStatus\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\t\n\x05START\x10\x01\x12\x08\n\x04STOP\x10\x02\x12\x0e\n\nCHECKPOINT\x10\x03\"6\n\x11TaggedRunMetadata\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x14\n\x0crun_metadata\x18\x02 \x01(\x0c\x42\x03\xf8\x01\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x11proto/event.proto\x12\x10tensorboard_easy\x1a\x13proto/summary.proto\"\xd3\x02\n\x05\x45vent\x12\x11\n\twall_time\x18\x01 \x01(\x01\x12\x0c\n\x04step\x18\x02 \x01(\x03\x12\x16\n\x0c\x66ile_version\x18\x03 \x01(\tH\x00\x12\x13\n\tgraph_def\x18\x04 \x01(\x0cH\x00\x12,\n\x07summary\x18\x05 \x01(\x0b\x32\x19.tensorboard_easy.SummaryH\x00\x12\x33\n\x0blog_message\x18\x06 \x01(\x0b\x32\x1c.tensorboard_easy.LogMessageH\x00\x12\x33\n\x0bsession_log\x18\x07 \x01(\x0b\x32\x1c.tensorboard_easy.SessionLogH\x00\x12\x42\n\x13tagged_run_metadata\x18\x08 \x01(\x0b\x32#.tensorboard_easy.TaggedRunMetadataH\x00\x12\x18\n\x0emeta_graph_def\x18\t \x01(\x0cH\x00\x42\x06\n\x04what\"\x9f\x01\n\nLogMessage\x12\x31\n\x05level\x18\x01 \x01(\x0e\x32\".tensorboard_easy.LogMessage.Level\x12\x0f\n\x07message\x18\x02 \x01(\t\"M\n\x05Level\x12\x0b\n\x07UNKNOWN\x10\x00\x12\r\n\tDEBUGGING\x10\n\x12\x08\n\x04INFO\x10\x14\x12\x08\n\x04WARN\x10\x1e\x12\t\n\x05\x45RROR\x10(\x12\t\n\x05\x46\x41TAL\x10\x32\"\xbc\x01\n\nSessionLog\x12:\n\x06status\x18\x01 \x01(\x0e\x32*.tensorboard_easy.SessionLog.SessionStatus\x12\x17\n\x0f\x63heckpoint_path\x18\x02 \x01(\t\x12\x0b\n\x03msg\x18\x03 \x01(\t\"L\n\rSessionStatus\x12\x16\n\x12STATUS_UNSPECIFIED\x10\x00\x12\t\n\x05START\x10\x01\x12\x08\n\x04STOP\x10\x02\x12\x0e\n\nCHECKPOINT\x10\x03\"6\n\x11TaggedRunMetadata\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x14\n\x0crun_metadata\x18\x02 \x01(\x0c\x42\x03\xf8\x01\x01\x62\x06proto3')
   ,
   dependencies=[proto_dot_summary__pb2.DESCRIPTOR,])
 
@@ -28,7 +28,7 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _LOGMESSAGE_LEVEL = _descriptor.EnumDescriptor(
   name='Level',
-  full_name='tensorflow.LogMessage.Level',
+  full_name='tensorboard_easy.LogMessage.Level',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -59,14 +59,14 @@ _LOGMESSAGE_LEVEL = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=449,
-  serialized_end=526,
+  serialized_start=485,
+  serialized_end=562,
 )
 _sym_db.RegisterEnumDescriptor(_LOGMESSAGE_LEVEL)
 
 _SESSIONLOG_SESSIONSTATUS = _descriptor.EnumDescriptor(
   name='SessionStatus',
-  full_name='tensorflow.SessionLog.SessionStatus',
+  full_name='tensorboard_easy.SessionLog.SessionStatus',
   filename=None,
   file=DESCRIPTOR,
   values=[
@@ -89,77 +89,77 @@ _SESSIONLOG_SESSIONSTATUS = _descriptor.EnumDescriptor(
   ],
   containing_type=None,
   options=None,
-  serialized_start=635,
-  serialized_end=711,
+  serialized_start=677,
+  serialized_end=753,
 )
 _sym_db.RegisterEnumDescriptor(_SESSIONLOG_SESSIONSTATUS)
 
 
 _EVENT = _descriptor.Descriptor(
   name='Event',
-  full_name='tensorflow.Event',
+  full_name='tensorboard_easy.Event',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='wall_time', full_name='tensorflow.Event.wall_time', index=0,
+      name='wall_time', full_name='tensorboard_easy.Event.wall_time', index=0,
       number=1, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='step', full_name='tensorflow.Event.step', index=1,
+      name='step', full_name='tensorboard_easy.Event.step', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='file_version', full_name='tensorflow.Event.file_version', index=2,
+      name='file_version', full_name='tensorboard_easy.Event.file_version', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='graph_def', full_name='tensorflow.Event.graph_def', index=3,
+      name='graph_def', full_name='tensorboard_easy.Event.graph_def', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='summary', full_name='tensorflow.Event.summary', index=4,
+      name='summary', full_name='tensorboard_easy.Event.summary', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='log_message', full_name='tensorflow.Event.log_message', index=5,
+      name='log_message', full_name='tensorboard_easy.Event.log_message', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='session_log', full_name='tensorflow.Event.session_log', index=6,
+      name='session_log', full_name='tensorboard_easy.Event.session_log', index=6,
       number=7, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='tagged_run_metadata', full_name='tensorflow.Event.tagged_run_metadata', index=7,
+      name='tagged_run_metadata', full_name='tensorboard_easy.Event.tagged_run_metadata', index=7,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='meta_graph_def', full_name='tensorflow.Event.meta_graph_def', index=8,
+      name='meta_graph_def', full_name='tensorboard_easy.Event.meta_graph_def', index=8,
       number=9, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -177,30 +177,30 @@ _EVENT = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='what', full_name='tensorflow.Event.what',
+      name='what', full_name='tensorboard_easy.Event.what',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=55,
-  serialized_end=370,
+  serialized_start=61,
+  serialized_end=400,
 )
 
 
 _LOGMESSAGE = _descriptor.Descriptor(
   name='LogMessage',
-  full_name='tensorflow.LogMessage',
+  full_name='tensorboard_easy.LogMessage',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='level', full_name='tensorflow.LogMessage.level', index=0,
+      name='level', full_name='tensorboard_easy.LogMessage.level', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='message', full_name='tensorflow.LogMessage.message', index=1,
+      name='message', full_name='tensorboard_easy.LogMessage.message', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -219,34 +219,34 @@ _LOGMESSAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=373,
-  serialized_end=526,
+  serialized_start=403,
+  serialized_end=562,
 )
 
 
 _SESSIONLOG = _descriptor.Descriptor(
   name='SessionLog',
-  full_name='tensorflow.SessionLog',
+  full_name='tensorboard_easy.SessionLog',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='status', full_name='tensorflow.SessionLog.status', index=0,
+      name='status', full_name='tensorboard_easy.SessionLog.status', index=0,
       number=1, type=14, cpp_type=8, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='checkpoint_path', full_name='tensorflow.SessionLog.checkpoint_path', index=1,
+      name='checkpoint_path', full_name='tensorboard_easy.SessionLog.checkpoint_path', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='msg', full_name='tensorflow.SessionLog.msg', index=2,
+      name='msg', full_name='tensorboard_easy.SessionLog.msg', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -265,27 +265,27 @@ _SESSIONLOG = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=529,
-  serialized_end=711,
+  serialized_start=565,
+  serialized_end=753,
 )
 
 
 _TAGGEDRUNMETADATA = _descriptor.Descriptor(
   name='TaggedRunMetadata',
-  full_name='tensorflow.TaggedRunMetadata',
+  full_name='tensorboard_easy.TaggedRunMetadata',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tag', full_name='tensorflow.TaggedRunMetadata.tag', index=0,
+      name='tag', full_name='tensorboard_easy.TaggedRunMetadata.tag', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='run_metadata', full_name='tensorflow.TaggedRunMetadata.run_metadata', index=1,
+      name='run_metadata', full_name='tensorboard_easy.TaggedRunMetadata.run_metadata', index=1,
       number=2, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -303,8 +303,8 @@ _TAGGEDRUNMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=713,
-  serialized_end=767,
+  serialized_start=755,
+  serialized_end=809,
 )
 
 _EVENT.fields_by_name['summary'].message_type = proto_dot_summary__pb2._SUMMARY
@@ -345,28 +345,28 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 Event = _reflection.GeneratedProtocolMessageType('Event', (_message.Message,), dict(
   DESCRIPTOR = _EVENT,
   __module__ = 'proto.event_pb2'
-  # @@protoc_insertion_point(class_scope:tensorflow.Event)
+  # @@protoc_insertion_point(class_scope:tensorboard_easy.Event)
   ))
 _sym_db.RegisterMessage(Event)
 
 LogMessage = _reflection.GeneratedProtocolMessageType('LogMessage', (_message.Message,), dict(
   DESCRIPTOR = _LOGMESSAGE,
   __module__ = 'proto.event_pb2'
-  # @@protoc_insertion_point(class_scope:tensorflow.LogMessage)
+  # @@protoc_insertion_point(class_scope:tensorboard_easy.LogMessage)
   ))
 _sym_db.RegisterMessage(LogMessage)
 
 SessionLog = _reflection.GeneratedProtocolMessageType('SessionLog', (_message.Message,), dict(
   DESCRIPTOR = _SESSIONLOG,
   __module__ = 'proto.event_pb2'
-  # @@protoc_insertion_point(class_scope:tensorflow.SessionLog)
+  # @@protoc_insertion_point(class_scope:tensorboard_easy.SessionLog)
   ))
 _sym_db.RegisterMessage(SessionLog)
 
 TaggedRunMetadata = _reflection.GeneratedProtocolMessageType('TaggedRunMetadata', (_message.Message,), dict(
   DESCRIPTOR = _TAGGEDRUNMETADATA,
   __module__ = 'proto.event_pb2'
-  # @@protoc_insertion_point(class_scope:tensorflow.TaggedRunMetadata)
+  # @@protoc_insertion_point(class_scope:tensorboard_easy.TaggedRunMetadata)
   ))
 _sym_db.RegisterMessage(TaggedRunMetadata)
 

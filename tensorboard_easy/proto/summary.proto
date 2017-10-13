@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package tensorflow;
+package tensorboard_easy;
 option cc_enable_arenas = true;
 
 import "proto/tensor.proto";

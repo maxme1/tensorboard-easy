@@ -17,9 +17,9 @@ _sym_db = _symbol_database.Default()
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/tensor_shape.proto',
-  package='tensorflow',
+  package='tensorboard_easy',
   syntax='proto3',
-  serialized_pb=_b('\n\x18proto/tensor_shape.proto\x12\ntensorflow\"d\n\x10TensorShapeProto\x12-\n\x03\x64im\x18\x02 \x03(\x0b\x32 .tensorflow.TensorShapeProto.Dim\x1a!\n\x03\x44im\x12\x0c\n\x04size\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\tB\x03\xf8\x01\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x18proto/tensor_shape.proto\x12\x10tensorboard_easy\"j\n\x10TensorShapeProto\x12\x33\n\x03\x64im\x18\x02 \x03(\x0b\x32&.tensorboard_easy.TensorShapeProto.Dim\x1a!\n\x03\x44im\x12\x0c\n\x04size\x18\x01 \x01(\x03\x12\x0c\n\x04name\x18\x02 \x01(\tB\x03\xf8\x01\x01\x62\x06proto3')
 )
 
 
@@ -27,20 +27,20 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _TENSORSHAPEPROTO_DIM = _descriptor.Descriptor(
   name='Dim',
-  full_name='tensorflow.TensorShapeProto.Dim',
+  full_name='tensorboard_easy.TensorShapeProto.Dim',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='size', full_name='tensorflow.TensorShapeProto.Dim.size', index=0,
+      name='size', full_name='tensorboard_easy.TensorShapeProto.Dim.size', index=0,
       number=1, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='name', full_name='tensorflow.TensorShapeProto.Dim.name', index=1,
+      name='name', full_name='tensorboard_easy.TensorShapeProto.Dim.name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -58,19 +58,19 @@ _TENSORSHAPEPROTO_DIM = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=107,
-  serialized_end=140,
+  serialized_start=119,
+  serialized_end=152,
 )
 
 _TENSORSHAPEPROTO = _descriptor.Descriptor(
   name='TensorShapeProto',
-  full_name='tensorflow.TensorShapeProto',
+  full_name='tensorboard_easy.TensorShapeProto',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='dim', full_name='tensorflow.TensorShapeProto.dim', index=0,
+      name='dim', full_name='tensorboard_easy.TensorShapeProto.dim', index=0,
       number=2, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -88,8 +88,8 @@ _TENSORSHAPEPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=40,
-  serialized_end=140,
+  serialized_start=46,
+  serialized_end=152,
 )
 
 _TENSORSHAPEPROTO_DIM.containing_type = _TENSORSHAPEPROTO
@@ -102,12 +102,12 @@ TensorShapeProto = _reflection.GeneratedProtocolMessageType('TensorShapeProto', 
   Dim = _reflection.GeneratedProtocolMessageType('Dim', (_message.Message,), dict(
     DESCRIPTOR = _TENSORSHAPEPROTO_DIM,
     __module__ = 'proto.tensor_shape_pb2'
-    # @@protoc_insertion_point(class_scope:tensorflow.TensorShapeProto.Dim)
+    # @@protoc_insertion_point(class_scope:tensorboard_easy.TensorShapeProto.Dim)
     ))
   ,
   DESCRIPTOR = _TENSORSHAPEPROTO,
   __module__ = 'proto.tensor_shape_pb2'
-  # @@protoc_insertion_point(class_scope:tensorflow.TensorShapeProto)
+  # @@protoc_insertion_point(class_scope:tensorboard_easy.TensorShapeProto)
   ))
 _sym_db.RegisterMessage(TensorShapeProto)
 _sym_db.RegisterMessage(TensorShapeProto.Dim)

@@ -18,9 +18,9 @@ from . import tensor_pb2 as proto_dot_tensor__pb2
 
 DESCRIPTOR = _descriptor.FileDescriptor(
   name='proto/summary.proto',
-  package='tensorflow',
+  package='tensorboard_easy',
   syntax='proto3',
-  serialized_pb=_b('\n\x13proto/summary.proto\x12\ntensorflow\x1a\x12proto/tensor.proto\"\'\n\x12SummaryDescription\x12\x11\n\ttype_hint\x18\x01 \x01(\t\"\x87\x01\n\x0eHistogramProto\x12\x0b\n\x03min\x18\x01 \x01(\x01\x12\x0b\n\x03max\x18\x02 \x01(\x01\x12\x0b\n\x03num\x18\x03 \x01(\x01\x12\x0b\n\x03sum\x18\x04 \x01(\x01\x12\x13\n\x0bsum_squares\x18\x05 \x01(\x01\x12\x18\n\x0c\x62ucket_limit\x18\x06 \x03(\x01\x42\x02\x10\x01\x12\x12\n\x06\x62ucket\x18\x07 \x03(\x01\x42\x02\x10\x01\"\xa3\x04\n\x07Summary\x12(\n\x05value\x18\x01 \x03(\x0b\x32\x19.tensorflow.Summary.Value\x1aX\n\x05Image\x12\x0e\n\x06height\x18\x01 \x01(\x05\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x12\n\ncolorspace\x18\x03 \x01(\x05\x12\x1c\n\x14\x65ncoded_image_string\x18\x04 \x01(\x0c\x1a}\n\x05\x41udio\x12\x13\n\x0bsample_rate\x18\x01 \x01(\x02\x12\x14\n\x0cnum_channels\x18\x02 \x01(\x03\x12\x15\n\rlength_frames\x18\x03 \x01(\x03\x12\x1c\n\x14\x65ncoded_audio_string\x18\x04 \x01(\x0c\x12\x14\n\x0c\x63ontent_type\x18\x05 \x01(\t\x1a\x94\x02\n\x05Value\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12-\n\x08metadata\x18\t \x01(\x0b\x32\x1b.tensorflow.SummaryMetadata\x12\x16\n\x0csimple_value\x18\x02 \x01(\x02H\x00\x12*\n\x05image\x18\x04 \x01(\x0b\x32\x19.tensorflow.Summary.ImageH\x00\x12+\n\x05histo\x18\x05 \x01(\x0b\x32\x1a.tensorflow.HistogramProtoH\x00\x12*\n\x05\x61udio\x18\x06 \x01(\x0b\x32\x19.tensorflow.Summary.AudioH\x00\x12)\n\x06tensor\x18\x08 \x01(\x0b\x32\x17.tensorflow.TensorProtoH\x00\x42\x07\n\x05value\"\xb5\x01\n\x0fSummaryMetadata\x12;\n\x0bplugin_data\x18\x01 \x03(\x0b\x32&.tensorflow.SummaryMetadata.PluginData\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x1b\n\x13summary_description\x18\x03 \x01(\t\x1a\x32\n\nPluginData\x12\x13\n\x0bplugin_name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\tB\x03\xf8\x01\x01\x62\x06proto3')
+  serialized_pb=_b('\n\x13proto/summary.proto\x12\x10tensorboard_easy\x1a\x12proto/tensor.proto\"\'\n\x12SummaryDescription\x12\x11\n\ttype_hint\x18\x01 \x01(\t\"\x87\x01\n\x0eHistogramProto\x12\x0b\n\x03min\x18\x01 \x01(\x01\x12\x0b\n\x03max\x18\x02 \x01(\x01\x12\x0b\n\x03num\x18\x03 \x01(\x01\x12\x0b\n\x03sum\x18\x04 \x01(\x01\x12\x13\n\x0bsum_squares\x18\x05 \x01(\x01\x12\x18\n\x0c\x62ucket_limit\x18\x06 \x03(\x01\x42\x02\x10\x01\x12\x12\n\x06\x62ucket\x18\x07 \x03(\x01\x42\x02\x10\x01\"\xc7\x04\n\x07Summary\x12.\n\x05value\x18\x01 \x03(\x0b\x32\x1f.tensorboard_easy.Summary.Value\x1aX\n\x05Image\x12\x0e\n\x06height\x18\x01 \x01(\x05\x12\r\n\x05width\x18\x02 \x01(\x05\x12\x12\n\ncolorspace\x18\x03 \x01(\x05\x12\x1c\n\x14\x65ncoded_image_string\x18\x04 \x01(\x0c\x1a}\n\x05\x41udio\x12\x13\n\x0bsample_rate\x18\x01 \x01(\x02\x12\x14\n\x0cnum_channels\x18\x02 \x01(\x03\x12\x15\n\rlength_frames\x18\x03 \x01(\x03\x12\x1c\n\x14\x65ncoded_audio_string\x18\x04 \x01(\x0c\x12\x14\n\x0c\x63ontent_type\x18\x05 \x01(\t\x1a\xb2\x02\n\x05Value\x12\x0b\n\x03tag\x18\x01 \x01(\t\x12\x33\n\x08metadata\x18\t \x01(\x0b\x32!.tensorboard_easy.SummaryMetadata\x12\x16\n\x0csimple_value\x18\x02 \x01(\x02H\x00\x12\x30\n\x05image\x18\x04 \x01(\x0b\x32\x1f.tensorboard_easy.Summary.ImageH\x00\x12\x31\n\x05histo\x18\x05 \x01(\x0b\x32 .tensorboard_easy.HistogramProtoH\x00\x12\x30\n\x05\x61udio\x18\x06 \x01(\x0b\x32\x1f.tensorboard_easy.Summary.AudioH\x00\x12/\n\x06tensor\x18\x08 \x01(\x0b\x32\x1d.tensorboard_easy.TensorProtoH\x00\x42\x07\n\x05value\"\xbb\x01\n\x0fSummaryMetadata\x12\x41\n\x0bplugin_data\x18\x01 \x03(\x0b\x32,.tensorboard_easy.SummaryMetadata.PluginData\x12\x14\n\x0c\x64isplay_name\x18\x02 \x01(\t\x12\x1b\n\x13summary_description\x18\x03 \x01(\t\x1a\x32\n\nPluginData\x12\x13\n\x0bplugin_name\x18\x01 \x01(\t\x12\x0f\n\x07\x63ontent\x18\x02 \x01(\tB\x03\xf8\x01\x01\x62\x06proto3')
   ,
   dependencies=[proto_dot_tensor__pb2.DESCRIPTOR,])
 
@@ -29,13 +29,13 @@ DESCRIPTOR = _descriptor.FileDescriptor(
 
 _SUMMARYDESCRIPTION = _descriptor.Descriptor(
   name='SummaryDescription',
-  full_name='tensorflow.SummaryDescription',
+  full_name='tensorboard_easy.SummaryDescription',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='type_hint', full_name='tensorflow.SummaryDescription.type_hint', index=0,
+      name='type_hint', full_name='tensorboard_easy.SummaryDescription.type_hint', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -53,62 +53,62 @@ _SUMMARYDESCRIPTION = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=55,
-  serialized_end=94,
+  serialized_start=61,
+  serialized_end=100,
 )
 
 
 _HISTOGRAMPROTO = _descriptor.Descriptor(
   name='HistogramProto',
-  full_name='tensorflow.HistogramProto',
+  full_name='tensorboard_easy.HistogramProto',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='min', full_name='tensorflow.HistogramProto.min', index=0,
+      name='min', full_name='tensorboard_easy.HistogramProto.min', index=0,
       number=1, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='max', full_name='tensorflow.HistogramProto.max', index=1,
+      name='max', full_name='tensorboard_easy.HistogramProto.max', index=1,
       number=2, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num', full_name='tensorflow.HistogramProto.num', index=2,
+      name='num', full_name='tensorboard_easy.HistogramProto.num', index=2,
       number=3, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sum', full_name='tensorflow.HistogramProto.sum', index=3,
+      name='sum', full_name='tensorboard_easy.HistogramProto.sum', index=3,
       number=4, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='sum_squares', full_name='tensorflow.HistogramProto.sum_squares', index=4,
+      name='sum_squares', full_name='tensorboard_easy.HistogramProto.sum_squares', index=4,
       number=5, type=1, cpp_type=5, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='bucket_limit', full_name='tensorflow.HistogramProto.bucket_limit', index=5,
+      name='bucket_limit', full_name='tensorboard_easy.HistogramProto.bucket_limit', index=5,
       number=6, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=_descriptor._ParseOptions(descriptor_pb2.FieldOptions(), _b('\020\001'))),
     _descriptor.FieldDescriptor(
-      name='bucket', full_name='tensorflow.HistogramProto.bucket', index=6,
+      name='bucket', full_name='tensorboard_easy.HistogramProto.bucket', index=6,
       number=7, type=1, cpp_type=5, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -126,41 +126,41 @@ _HISTOGRAMPROTO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=97,
-  serialized_end=232,
+  serialized_start=103,
+  serialized_end=238,
 )
 
 
 _SUMMARY_IMAGE = _descriptor.Descriptor(
   name='Image',
-  full_name='tensorflow.Summary.Image',
+  full_name='tensorboard_easy.Summary.Image',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='height', full_name='tensorflow.Summary.Image.height', index=0,
+      name='height', full_name='tensorboard_easy.Summary.Image.height', index=0,
       number=1, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='width', full_name='tensorflow.Summary.Image.width', index=1,
+      name='width', full_name='tensorboard_easy.Summary.Image.width', index=1,
       number=2, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='colorspace', full_name='tensorflow.Summary.Image.colorspace', index=2,
+      name='colorspace', full_name='tensorboard_easy.Summary.Image.colorspace', index=2,
       number=3, type=5, cpp_type=1, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='encoded_image_string', full_name='tensorflow.Summary.Image.encoded_image_string', index=3,
+      name='encoded_image_string', full_name='tensorboard_easy.Summary.Image.encoded_image_string', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
@@ -178,47 +178,47 @@ _SUMMARY_IMAGE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=288,
-  serialized_end=376,
+  serialized_start=300,
+  serialized_end=388,
 )
 
 _SUMMARY_AUDIO = _descriptor.Descriptor(
   name='Audio',
-  full_name='tensorflow.Summary.Audio',
+  full_name='tensorboard_easy.Summary.Audio',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='sample_rate', full_name='tensorflow.Summary.Audio.sample_rate', index=0,
+      name='sample_rate', full_name='tensorboard_easy.Summary.Audio.sample_rate', index=0,
       number=1, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='num_channels', full_name='tensorflow.Summary.Audio.num_channels', index=1,
+      name='num_channels', full_name='tensorboard_easy.Summary.Audio.num_channels', index=1,
       number=2, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='length_frames', full_name='tensorflow.Summary.Audio.length_frames', index=2,
+      name='length_frames', full_name='tensorboard_easy.Summary.Audio.length_frames', index=2,
       number=3, type=3, cpp_type=2, label=1,
       has_default_value=False, default_value=0,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='encoded_audio_string', full_name='tensorflow.Summary.Audio.encoded_audio_string', index=3,
+      name='encoded_audio_string', full_name='tensorboard_easy.Summary.Audio.encoded_audio_string', index=3,
       number=4, type=12, cpp_type=9, label=1,
       has_default_value=False, default_value=_b(""),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='content_type', full_name='tensorflow.Summary.Audio.content_type', index=4,
+      name='content_type', full_name='tensorboard_easy.Summary.Audio.content_type', index=4,
       number=5, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -236,61 +236,61 @@ _SUMMARY_AUDIO = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=378,
-  serialized_end=503,
+  serialized_start=390,
+  serialized_end=515,
 )
 
 _SUMMARY_VALUE = _descriptor.Descriptor(
   name='Value',
-  full_name='tensorflow.Summary.Value',
+  full_name='tensorboard_easy.Summary.Value',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='tag', full_name='tensorflow.Summary.Value.tag', index=0,
+      name='tag', full_name='tensorboard_easy.Summary.Value.tag', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='metadata', full_name='tensorflow.Summary.Value.metadata', index=1,
+      name='metadata', full_name='tensorboard_easy.Summary.Value.metadata', index=1,
       number=9, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='simple_value', full_name='tensorflow.Summary.Value.simple_value', index=2,
+      name='simple_value', full_name='tensorboard_easy.Summary.Value.simple_value', index=2,
       number=2, type=2, cpp_type=6, label=1,
       has_default_value=False, default_value=float(0),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='image', full_name='tensorflow.Summary.Value.image', index=3,
+      name='image', full_name='tensorboard_easy.Summary.Value.image', index=3,
       number=4, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='histo', full_name='tensorflow.Summary.Value.histo', index=4,
+      name='histo', full_name='tensorboard_easy.Summary.Value.histo', index=4,
       number=5, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='audio', full_name='tensorflow.Summary.Value.audio', index=5,
+      name='audio', full_name='tensorboard_easy.Summary.Value.audio', index=5,
       number=6, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='tensor', full_name='tensorflow.Summary.Value.tensor', index=6,
+      name='tensor', full_name='tensorboard_easy.Summary.Value.tensor', index=6,
       number=8, type=11, cpp_type=10, label=1,
       has_default_value=False, default_value=None,
       message_type=None, enum_type=None, containing_type=None,
@@ -308,22 +308,22 @@ _SUMMARY_VALUE = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
     _descriptor.OneofDescriptor(
-      name='value', full_name='tensorflow.Summary.Value.value',
+      name='value', full_name='tensorboard_easy.Summary.Value.value',
       index=0, containing_type=None, fields=[]),
   ],
-  serialized_start=506,
-  serialized_end=782,
+  serialized_start=518,
+  serialized_end=824,
 )
 
 _SUMMARY = _descriptor.Descriptor(
   name='Summary',
-  full_name='tensorflow.Summary',
+  full_name='tensorboard_easy.Summary',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='value', full_name='tensorflow.Summary.value', index=0,
+      name='value', full_name='tensorboard_easy.Summary.value', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
@@ -341,27 +341,27 @@ _SUMMARY = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=235,
-  serialized_end=782,
+  serialized_start=241,
+  serialized_end=824,
 )
 
 
 _SUMMARYMETADATA_PLUGINDATA = _descriptor.Descriptor(
   name='PluginData',
-  full_name='tensorflow.SummaryMetadata.PluginData',
+  full_name='tensorboard_easy.SummaryMetadata.PluginData',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='plugin_name', full_name='tensorflow.SummaryMetadata.PluginData.plugin_name', index=0,
+      name='plugin_name', full_name='tensorboard_easy.SummaryMetadata.PluginData.plugin_name', index=0,
       number=1, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='content', full_name='tensorflow.SummaryMetadata.PluginData.content', index=1,
+      name='content', full_name='tensorboard_easy.SummaryMetadata.PluginData.content', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -379,33 +379,33 @@ _SUMMARYMETADATA_PLUGINDATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=916,
-  serialized_end=966,
+  serialized_start=964,
+  serialized_end=1014,
 )
 
 _SUMMARYMETADATA = _descriptor.Descriptor(
   name='SummaryMetadata',
-  full_name='tensorflow.SummaryMetadata',
+  full_name='tensorboard_easy.SummaryMetadata',
   filename=None,
   file=DESCRIPTOR,
   containing_type=None,
   fields=[
     _descriptor.FieldDescriptor(
-      name='plugin_data', full_name='tensorflow.SummaryMetadata.plugin_data', index=0,
+      name='plugin_data', full_name='tensorboard_easy.SummaryMetadata.plugin_data', index=0,
       number=1, type=11, cpp_type=10, label=3,
       has_default_value=False, default_value=[],
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='display_name', full_name='tensorflow.SummaryMetadata.display_name', index=1,
+      name='display_name', full_name='tensorboard_easy.SummaryMetadata.display_name', index=1,
       number=2, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
       is_extension=False, extension_scope=None,
       options=None),
     _descriptor.FieldDescriptor(
-      name='summary_description', full_name='tensorflow.SummaryMetadata.summary_description', index=2,
+      name='summary_description', full_name='tensorboard_easy.SummaryMetadata.summary_description', index=2,
       number=3, type=9, cpp_type=9, label=1,
       has_default_value=False, default_value=_b("").decode('utf-8'),
       message_type=None, enum_type=None, containing_type=None,
@@ -423,8 +423,8 @@ _SUMMARYMETADATA = _descriptor.Descriptor(
   extension_ranges=[],
   oneofs=[
   ],
-  serialized_start=785,
-  serialized_end=966,
+  serialized_start=827,
+  serialized_end=1014,
 )
 
 _SUMMARY_IMAGE.containing_type = _SUMMARY
@@ -462,14 +462,14 @@ _sym_db.RegisterFileDescriptor(DESCRIPTOR)
 SummaryDescription = _reflection.GeneratedProtocolMessageType('SummaryDescription', (_message.Message,), dict(
   DESCRIPTOR = _SUMMARYDESCRIPTION,
   __module__ = 'proto.summary_pb2'
-  # @@protoc_insertion_point(class_scope:tensorflow.SummaryDescription)
+  # @@protoc_insertion_point(class_scope:tensorboard_easy.SummaryDescription)
   ))
 _sym_db.RegisterMessage(SummaryDescription)
 
 HistogramProto = _reflection.GeneratedProtocolMessageType('HistogramProto', (_message.Message,), dict(
   DESCRIPTOR = _HISTOGRAMPROTO,
   __module__ = 'proto.summary_pb2'
-  # @@protoc_insertion_point(class_scope:tensorflow.HistogramProto)
+  # @@protoc_insertion_point(class_scope:tensorboard_easy.HistogramProto)
   ))
 _sym_db.RegisterMessage(HistogramProto)
 
@@ -478,26 +478,26 @@ Summary = _reflection.GeneratedProtocolMessageType('Summary', (_message.Message,
   Image = _reflection.GeneratedProtocolMessageType('Image', (_message.Message,), dict(
     DESCRIPTOR = _SUMMARY_IMAGE,
     __module__ = 'proto.summary_pb2'
-    # @@protoc_insertion_point(class_scope:tensorflow.Summary.Image)
+    # @@protoc_insertion_point(class_scope:tensorboard_easy.Summary.Image)
     ))
   ,
 
   Audio = _reflection.GeneratedProtocolMessageType('Audio', (_message.Message,), dict(
     DESCRIPTOR = _SUMMARY_AUDIO,
     __module__ = 'proto.summary_pb2'
-    # @@protoc_insertion_point(class_scope:tensorflow.Summary.Audio)
+    # @@protoc_insertion_point(class_scope:tensorboard_easy.Summary.Audio)
     ))
   ,
 
   Value = _reflection.GeneratedProtocolMessageType('Value', (_message.Message,), dict(
     DESCRIPTOR = _SUMMARY_VALUE,
     __module__ = 'proto.summary_pb2'
-    # @@protoc_insertion_point(class_scope:tensorflow.Summary.Value)
+    # @@protoc_insertion_point(class_scope:tensorboard_easy.Summary.Value)
     ))
   ,
   DESCRIPTOR = _SUMMARY,
   __module__ = 'proto.summary_pb2'
-  # @@protoc_insertion_point(class_scope:tensorflow.Summary)
+  # @@protoc_insertion_point(class_scope:tensorboard_easy.Summary)
   ))
 _sym_db.RegisterMessage(Summary)
 _sym_db.RegisterMessage(Summary.Image)
@@ -509,12 +509,12 @@ SummaryMetadata = _reflection.GeneratedProtocolMessageType('SummaryMetadata', (_
   PluginData = _reflection.GeneratedProtocolMessageType('PluginData', (_message.Message,), dict(
     DESCRIPTOR = _SUMMARYMETADATA_PLUGINDATA,
     __module__ = 'proto.summary_pb2'
-    # @@protoc_insertion_point(class_scope:tensorflow.SummaryMetadata.PluginData)
+    # @@protoc_insertion_point(class_scope:tensorboard_easy.SummaryMetadata.PluginData)
     ))
   ,
   DESCRIPTOR = _SUMMARYMETADATA,
   __module__ = 'proto.summary_pb2'
-  # @@protoc_insertion_point(class_scope:tensorflow.SummaryMetadata)
+  # @@protoc_insertion_point(class_scope:tensorboard_easy.SummaryMetadata)
   ))
 _sym_db.RegisterMessage(SummaryMetadata)
 _sym_db.RegisterMessage(SummaryMetadata.PluginData)
