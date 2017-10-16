@@ -60,8 +60,9 @@ class Logger:
         return wrapper
 
     def close(self):
-        self.file.close()
-        self.file = None
+        if self.file is not None:
+            self.file.close()
+            self.file = None
 
     def make_log_scalar(self, tag: str, first_step: int = 0) -> callable(Union[int, float]):
         """

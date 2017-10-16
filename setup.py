@@ -13,14 +13,14 @@ setup(
     name='tensorboard-easy',
     packages=find_packages(),
     include_package_data=True,
-    version='0.2.2',
+    version='0.2.3',
     description='A tensorflow-independent tensorboard logger',
     long_description=long_description,
     author='maxme1',
     author_email='maxs987@gmail.com',
     license='MIT',
     url='https://github.com/maxme1/tensorboard-easy',
-    download_url='https://github.com/maxme1/tensorboard-easy/archive/0.2.2.tar.gz',
+    download_url='https://github.com/maxme1/tensorboard-easy/archive/0.2.3.tar.gz',
     keywords=[
         'tensorboard', 'logging'
     ],
